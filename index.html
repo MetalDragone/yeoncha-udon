@@ -208,7 +208,7 @@ function voteForm(){
  +'<fieldset class="field"><legend>몇 명이에요?</legend><div class="seg">'
  +[['2','둘이서'],['1','혼자']].map(function(o){return '<label><input type="radio" name="size" id="f-size-'+o[0]+'" value="'+o[0]+'"'+(d.size===o[0]?' checked':'')+'>'+o[1]+'</label>'}).join('')+'</div></fieldset>'
  +'<fieldset class="field"><legend>갈 수 있는 날짜 (여러 개 골라도 돼요)</legend><div class="picks">'
- +OPTS.map(function(o){return '<label class="pick"><input type="checkbox" name="plans" id="f-p-'+o.k+'" value="'+o.k+'"'+(d.plans.indexOf(o.k)>=0?' checked':'')+'><div><b>'+o.name+'</b><br><span>'+o.range.replace('1월 ','')+', 연차 '+o.leave+'일</span></div><em class="num">'+won(o.price)+'원</em></label>'}).join('')
+ +OPTS.map(function(o){return '<label class="pick"><input type="checkbox" name="plans" id="f-p-'+o.k+'" value="'+o.k+'"'+(d.plans.indexOf(o.k)>=0?' checked':'')+'><div><b>'+o.name+'</b><br><span>'+o.from+'~'+o.to+'일, 연차 '+o.leave+'일</span></div><em class="num">'+won(o.price)+'원</em></label>'}).join('')
  +'<label class="pick none"><input type="checkbox" id="f-none"'+(d.none?' checked':'')+'><div><b>이번엔 어려워요</b></div></label>'
  +'</div></fieldset>'
  +'<div class="field"><label for="f-memo">하고 싶은 말 (선택)</label><textarea id="f-memo" maxlength="200">'+esc(d.memo)+'</textarea></div>'
