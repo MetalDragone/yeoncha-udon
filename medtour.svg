@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-label="메드 투어">
+  <defs><clipPath id="mt-c"><circle cx="120" cy="120" r="112"/></clipPath></defs>
+  <circle cx="120" cy="120" r="116" fill="#08B191"/>
+  <g clip-path="url(#mt-c)">
+    <!-- 어깨, 검은 카라 셔츠 -->
+    <path d="M28 240 C34 196 70 182 120 182 C170 182 206 196 212 240Z" fill="#141A19"/>
+    <path d="M98 182 L120 206 L142 182 Z" fill="#2A3331"/>
+    <!-- 목 -->
+    <path d="M102 160 h36 v26 c-10 8 -26 8 -36 0Z" fill="#E9C2A8"/>
+    <!-- 귀 -->
+    <ellipse cx="68" cy="116" rx="11" ry="17" fill="#F1CDB4"/>
+    <ellipse cx="172" cy="116" rx="11" ry="17" fill="#F1CDB4"/>
+    <!-- 얼굴 -->
+    <path d="M72 100 C72 62 168 62 168 100 L168 124 C168 156 146 176 120 176 C94 176 72 156 72 124Z" fill="#F6DAC6"/>
+    <!-- 머리: 볼륨 있게 넘긴 짧은 머리 -->
+    <path d="M64 110 C56 62 86 32 122 32 C162 32 188 60 176 108 L168 104 C168 94 166 88 160 84 C142 90 116 86 100 74 C92 86 82 96 72 102 Z" fill="#141A19"/>
+    <path d="M104 52 C124 44 148 48 162 62" fill="none" stroke="#3A4644" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- 눈썹 -->
+    <path d="M86 104 L110 102" stroke="#141A19" stroke-width="6" stroke-linecap="round"/>
+    <path d="M130 102 L154 104" stroke="#141A19" stroke-width="6" stroke-linecap="round"/>
+    <!-- 눈 -->
+    <ellipse cx="99" cy="118" rx="5.5" ry="4.5" fill="#141A19"/>
+    <ellipse cx="141" cy="118" rx="5.5" ry="4.5" fill="#141A19"/>
+    <circle cx="101" cy="116.5" r="1.4" fill="#fff"/>
+    <circle cx="143" cy="116.5" r="1.4" fill="#fff"/>
+    <!-- 코, 볼, 입 -->
+    <path d="M120 122 L117 140 C119 142 123 142 125 140" fill="none" stroke="#D9A88C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse cx="88" cy="140" rx="9" ry="5" fill="#F2A9A0" opacity=".55"/>
+    <ellipse cx="152" cy="140" rx="9" ry="5" fill="#F2A9A0" opacity=".55"/>
+    <path d="M108 152 C114 158 126 158 132 152" fill="#D86F78" stroke="#C25863" stroke-width="2" stroke-linejoin="round"/>
+    <!-- 우동 그릇과 젓가락 -->
+    <path d="M150 168 L206 140" stroke="#C9934F" stroke-width="5" stroke-linecap="round"/>
+    <path d="M154 176 L210 152" stroke="#C9934F" stroke-width="5" stroke-linecap="round"/>
+    <path d="M166 170 C164 186 168 196 172 206" fill="none" stroke="#FFF4DC" stroke-width="5" stroke-linecap="round"/>
+    <path d="M176 166 C176 184 180 194 182 206" fill="none" stroke="#FFF4DC" stroke-width="5" stroke-linecap="round"/>
+    <path d="M144 204 h76 c0 22 -16 36 -38 36 c-22 0 -38 -14 -38 -36Z" fill="#E3122C"/>
+    <path d="M144 204 h76" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+    <path d="M160 218 h44" stroke="#fff" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+  </g>
+  <circle cx="120" cy="120" r="112" fill="none" stroke="#000" stroke-width="8"/>
+</svg>
