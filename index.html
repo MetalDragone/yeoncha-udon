@@ -234,7 +234,7 @@ var DAYS=[
   ['저녁','같이 저녁 (원하는 커플만)','뼈째 구운 닭다리로 유명한 호네쓰키도리 잇카쿠를 저장해 두었어요.',0,'ikkaku']],
   free:'<b>A안은 오후가 통째로 자유예요.</b> 리쓰린 공원이나 바닷가 창고를 고친 기타하마 앨리는 시내라 걸어서 가요.'},
  {n:'16',w:'토',map:'sat',t:'우동 세 그릇, 서쪽 바다에서 노을',sub:'하루 종일 같이 움직이고 밤엔 다 같이 한잔',rows:[
-  ['08:00','다카마쓰역 근처에서 렌터카 받기','6명이니 7~8인승 미니밴 1대예요. 고속도로 스마트IC는 ETC 전용이라 ETC 카드를 꼭 같이 빌려요.'],
+  ['08:00','다카마쓰역 근처에서 렌터카 받기','인원에 맞춰 미니밴이나 차 두 대로 빌려요. 고속도로 스마트IC는 ETC 전용이라 ETC 카드를 꼭 같이 빌려요.'],
   ['09:00','야마고에 우동','날달걀에 비벼 먹는 가마타마 우동이 처음 시작된 집이에요. 토요일엔 손님이 2천 명 넘게 와서 문 여는 시간에 맞춰 가요.',1,'yamagoe'],
   ['10:10','사누키 우동 가모','야마고에에서 차로 20분쯤. 논 옆 벤치에 앉아 먹는 집이에요. 토요일은 13시쯤 닫아요.',1,'gamou'],
   ['11:05','히노데 제면소에서 줄 서기','가모에서 15분. 11:30부터 12:30까지 한 시간만 먹을 수 있는 집이에요.',1,'hinode'],
@@ -336,8 +336,8 @@ function tally(){
  var V=votes(),c={a:0,b:0,no:0},drive=0;
  V.forEach(function(v){c[v.att]+=v.size;if(v.att!=='no'&&v.drive)drive++});
  var bar='',k=0;
- for(var i=0;i<6;i++){var cls='';if(i<c.a)cls='on';else if(i<c.a+c.b)cls='on b';bar+='<i class="'+cls+'"></i>'}
- return '<div class="card tally"><p><strong class="num">'+(c.a+c.b)+'명</strong>참석, 6명이 모이면 항공권부터 예약해요</p><div class="bar" aria-hidden="true">'+bar+'</div>'
+ for(var i=0;i<c.a+c.b;i++){var cls='';if(i<c.a)cls='on';else if(i<c.a+c.b)cls='on b';bar+='<i class="'+cls+'"></i>'}
+ return '<div class="card tally"><p><strong class="num">'+(c.a+c.b)+'명</strong>참석, 투표가 끝나면 항공권부터 예약해요</p><div class="bar" aria-hidden="true">'+bar+'</div>'
  +'<div class="split3 num"><span><i style="background:var(--mint)"></i>A안 '+c.a+'명</span><span><i style="background:var(--ink)"></i>B안 '+c.b+'명</span><span>못 가요 '+c.no+'명</span><span>운전 가능 '+drive+'명</span></div></div>';
 }
 function voters(){
@@ -388,7 +388,7 @@ function render(){
  document.getElementById('root').innerHTML=
  '<header class="top"><div class="col"><p class="host">메드 투어 2027년 1월 커플 모임</p>'
  +'<h1><img class="logo" src="'+LOGO+'" width="760" height="598" alt="연차 2개 쓰고 어떡행"'+(view.anim?'':' style="animation:none"')+'></h1>'
- +'<p class="what">금요일과 월요일에 연차를 내고, 3박 4일 동안 다카마쓰로 우동 먹으러 가요. 3커플 6명.</p>'
+ +'<p class="what">금요일과 월요일에 연차를 내고, 3박 4일 동안 다카마쓰로 우동 먹으러 가요.</p>'
  +'<div class="week num" aria-label="1월 15일 금요일 출발, 15일과 18일 연차, 19일 출근">'
  +'<div class="dim"><span>목</span><b>14</b><em>&nbsp;</em></div>'
  +'<div class="off"><span>금</span><b>15</b><em>연차</em></div>'
@@ -407,7 +407,7 @@ function render(){
  +'<section><h2>예상 비용</h2><div class="card"><ul class="costs">'
  +'<li><span>왕복 항공권<small>1인, A안과 B안 차이는 1,801원</small></span><b class="num">344,900원부터</b></li>'
  +'<li><span>공항 리무진 버스<small>금요일 공항에서 시내, 월요일 시내에서 공항</small></span><b class="num">왕복 2,000엔</b></li>'
- +'<li><span>렌터카, 기름값, 통행료<small>8인승 미니밴 1대, 6명이 나눠요</small></span><b>예약 후 공유</b></li>'
+ +'<li><span>렌터카, 기름값, 통행료<small>가는 사람끼리 나눠요</small></span><b>예약 후 공유</b></li>'
  +'<li><span>우동<small>대부분 한 그릇 200~600엔, 현금만 받는 곳이 많아요</small></span><b>각자</b></li>'
  +'<li><span>숙소<small>커플마다 자유롭게 잡아요</small></span><b>각자</b></li>'
  +'</ul></div></section>'
