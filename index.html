@@ -188,6 +188,13 @@ body.has-dock main.col{padding-bottom:110px}
 .toc a{flex:none;text-decoration:none;font-size:14.5px;font-weight:700;color:var(--ink);background:var(--paper);border:1px solid var(--rule);border-radius:999px;padding:7px 13px}
 .toc a.on{background:var(--ink);color:#fff;border-color:var(--ink)}
 
+/* 같이 가는 사람 */
+.crew{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.mate{display:flex;align-items:center;gap:14px;padding:16px 18px}
+.mate p b{display:block;font-size:18px;font-weight:800;line-height:1.4}
+.seal.sm{width:52px;height:52px;flex:none;border-width:2.5px}
+.seal.sm b{font-size:22px}
+
 /* 확정 도장 */
 .ok-stamp{display:inline-block;border:2.5px solid #fff;border-radius:8px;padding:1px 9px;font-size:15px;font-weight:900;transform:rotate(-4deg)}
 
@@ -339,7 +346,7 @@ var DAYS=[
   ['16:30쯤','리무진 버스로 시내','숙소에 가까운 정류장에서 내려요. 가와라마치(瓦町)까지 30분쯤, 다카마쓰역까지 45분쯤 걸려요.'],
   ['19:00','같이 저녁 (원하는 커플만)','뼈째 구운 닭다리로 유명한 호네쓰키도리 잇카쿠를 저장해 두었어요.',0,'ikkaku']]},
  {n:'16',w:'토',map:'sat',t:'우동 세 그릇, 서쪽 바다에서 노을',sub:'하루 종일 같이 움직이고 밤엔 다 같이 한잔',rows:[
-  ['08:00','다카마쓰역 근처에서 렌터카 받기','인원에 맞춰 미니밴이나 차 두 대로 빌려요. 고속도로 스마트IC는 ETC 전용이라 ETC 카드를 꼭 같이 빌려요.'],
+  ['08:00','다카마쓰역 근처에서 렌터카 받기','일행이 다 타는 7~8인승 미니밴 1대예요. 고속도로 스마트IC는 ETC 전용이라 ETC 카드를 꼭 같이 빌려요.'],
   ['09:00','야마고에 우동','날달걀에 비벼 먹는 가마타마 우동이 처음 시작된 집이에요. 토요일엔 손님이 2천 명 넘게 와서 문 여는 시간에 맞춰 가요.',1,'yamagoe'],
   ['10:10','사누키 우동 가모','야마고에에서 차로 20분쯤. 논 옆 벤치에 앉아 먹는 집이에요. 토요일은 13시쯤 닫아요.',1,'gamou'],
   ['11:05','히노데 제면소에서 줄 서기','가모에서 15분. 11:30부터 12:30까지 한 시간만 먹을 수 있는 집이에요.',1,'hinode'],
@@ -434,6 +441,10 @@ function plan(){
   return h+'</div>'}).join('');
 }
 var TILT=[-6,4,-2,7,-5,3,-8];
+var CREW=[['김예나','함영준'],['김소연','최철용'],['최혜지','김용대']];
+function crew(){
+ return '<div class="crew">'+CREW.map(function(c,i){return '<div class="card mate"><span class="seal sm" style="--r:'+TILT[i+1]+'deg"><b>確</b></span><p><b>'+c[0]+'</b><b>'+c[1]+'</b></p></div>'}).join('')+'</div>';
+}
 function link(href,t){return '<a href="'+esc(href)+'" target="_blank" rel="noopener">'+t+'</a>'}
 function moveSec(){
  return '<section id="move"><h2>공항과 시내 이동</h2><p class="lede">다카마쓰 공항에는 기차가 없어서 리무진 버스를 타요. 비행기 도착 시간에 맞춰 다니고, 예약 없이 타는 순서대로 앉아요.</p>'
@@ -534,7 +545,7 @@ function pack(){
   return '<li><label><input type="checkbox" data-pack="'+i+'"'+(packed[i]?' checked':'')+'><span><b>'+p[0]+'</b><small>'+p[1]+'</small></span></label></li>'}).join('')+'</ul></div>';
 }
 function dock(){
- if(!LIVE||!READY)return '';
+ return '';
  var V=votes(),c=0;V.forEach(function(v){if(v.att!=='no')c+=v.size});
  return '<div class="dock hide" id="dock"><div class="in"><p><b>B안으로 확정됐어요</b>'+(view.load==='ready'?'지금까지 '+c+'명 참석':'갈 수 있는지 알려 주세요')+'</p><a href="#vote-sec">참석 체크</a></div></div>';
 }
@@ -622,10 +633,10 @@ function render(){
  +'<div class="go"><span>일</span><b>17</b><em>우동</em></div>'
  +'<div class="off late"><span>월</span><b>18</b><em>연차</em></div>'
  +'<div><span>화</span><b>19</b><em>출근</em></div></div>'
- +'<p class="facts"><span>B안 확정, 금요일 14:10 출발</span><span>우동 일곱 그릇</span><span>토요일엔 렌터카로 서쪽 바다까지</span></p>'
- +'<div class="cta"><a class="go" href="#vote-sec">참석 체크</a><a class="ghost" href="#plan">일정 보기</a></div>'
+ +'<p class="facts"><span>B안, 참석 확정</span><span>금요일 14:10 출발</span><span>우동 일곱 그릇</span></p>'
+ +'<div class="cta"><a class="go" href="#plan">일정 보기</a><a class="ghost" href="#car">렌터카 예약</a></div>'
  +'</div></header>'
- +'<nav class="toc" aria-label="바로가기"><div class="col">'+[['fly','항공'],['plan','일정'],['move','이동'],['car','렌터카'],['stay','숙소'],['shop','쇼핑'],['tax','면세'],['tip','꿀팁'],['vote-sec','참석']].map(function(x){return '<a href="#'+x[0]+'" data-sec="'+x[0]+'">'+x[1]+'</a>'}).join('')+'</div></nav>'
+ +'<nav class="toc" aria-label="바로가기"><div class="col">'+[['fly','항공'],['plan','일정'],['move','이동'],['car','렌터카'],['stay','숙소'],['shop','쇼핑'],['tax','면세'],['tip','꿀팁'],['vote-sec','일행']].map(function(x){return '<a href="#'+x[0]+'" data-sec="'+x[0]+'">'+x[1]+'</a>'}).join('')+'</div></nav>'
  +'<main class="col">'
  +'<section id="fly"><h2>항공편</h2><p class="lede">B안으로 확정했어요. 가는 편은 진에어, 오는 편은 에어서울이라 표를 따로 사요.</p><div class="passes">'+pass()+'</div>'
  +'<p class="small">가격은 11월 17일 스카이스캐너에서 검색한 값이라 예약할 때 달라질 수 있어요. 수하물 규정은 항공사마다 따로 적용돼요.</p></section>'
@@ -642,7 +653,7 @@ function render(){
  +'<li><span>우동<small>대부분 한 그릇 200~600엔, 현금</small></span><b>각자</b></li>'
  +'</ul></div></section>'
  +'<section id="pack"><h2>챙길 것</h2><p class="lede">체크해 두면 이 기기에서 다음에 열어도 남아 있어요.</p>'+pack()+'</section>'
- +'<section id="vote-sec"><h2>참석 체크</h2><p class="lede">B안 일정으로 갈 수 있는지 알려 주세요. 운전할 수 있는 사람도 같이 표시해 주세요.</p>'+voteForm()+'</section>'
+ +'<section id="vote-sec"><h2>같이 가는 사람</h2><p class="lede">참석 확정이에요. 이제 항공권, 렌터카, 숙소 순서로 예약해요.</p>'+crew()+'</section>'
  +guest()
  +'<footer>메드 아저씨가 만든 안내 페이지예요. 항공사나 여행사의 공식 안내가 아니에요.</footer>'
  +'</main>'+dock();
