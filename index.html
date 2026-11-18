@@ -425,17 +425,17 @@ var DAYS=[
   ['11:40','다카마쓰 출발 (에어서울)',''],
   ['13:20','인천 도착','']]}
 ];
+function gimg(id,w,h){return 'https://lh3.googleusercontent.com/grass-cs/'+id+'=w'+(w||480)+'-h'+(h||360)+'-p-k-no'}
 function cimg(f,w){return 'https://commons.wikimedia.org/wiki/Special:FilePath/'+encodeURIComponent(f)+'?width='+(w||480)}
-function cpage(f){return 'https://commons.wikimedia.org/wiki/File:'+encodeURIComponent(f.replace(/ /g,'_'))}
-/* 대표 메뉴: [메뉴 이름, 설명, 위키미디어 공용 파일, 작가, 라이선스, 이 가게 사진인지] */
+/* 대표 메뉴: [메뉴 이름, 설명, 구글 지도 리뷰 사진 id] */
 var DISH={
- yamagoe:['가마타마','삶은 면을 바로 건져 날달걀과 간장에 비벼 먹어요. 이 집이 처음 만든 메뉴예요.','釜玉うどん.jpg','ume-y','CC BY 2.0'],
- gamou:['가케 + 아게','따뜻한 국물에 큼직한 유부(아게)를 올려 먹는 게 이 집 방식이에요.','Kake udon by Joe Jones in Tokyo.jpg','Joe Jones','CC BY 2.0'],
- hinode:['가마아게','방금 삶은 면을 그릇째 받아 간장이나 국물에 찍어 먹어요. 면 맛이 그대로 나요.','Kama-age sanuki udon by sekido in Takamatsu, Kagawa.jpg','sekido','CC BY 2.0'],
- tsuru:['카레 우동','걸쭉한 카레 국물에 굵은 면. 술 마신 뒤에 먹는 사람이 많아요.','Curry nanban udon by june29.jpg','june29','CC BY 2.0'],
- baka:['가마버터','가마타마에 버터와 후추를 더해 까르보나라처럼 먹어요.','100408 釜玉うどん.jpg','Tatsuo Yamashita','CC BY 2.0'],
- hashimoto:['갓 뽑은 면','제면소라 메뉴가 거의 없어요. 면을 받아 간장이나 국물을 부어 먹어요.','Sanuki udon noodle (2223059600).jpg','pelican','CC BY-SA 2.0'],
- sakaeda:['가케 + 튀김','면을 받아 직접 데우고 국물을 붓는 셀프 방식. 튀김을 골라 올려요.','讃岐うどん（野菜天） (2147814591).jpg','Yamaguchi Yoshiaki','CC BY-SA 2.0']
+ yamagoe:['가마타마','삶은 면을 바로 건져 날달걀과 간장에 비벼 먹어요. 이 집이 처음 만든 메뉴예요.','AABkmLdVtmwtFWcu9FXmuJdNq7n_Z2u8jgruwg6u4AENwLMnQ_y_dfGjwQJ4lcdp6r6DrQSwQjZejP55kMf_mrPSHD0Wnxeg_YfHk-5TC5eymql0xoAeNY-30EbHC94jK8hGgGLqXR76W48PYAUN'],
+ gamou:['가케 + 아게','따뜻한 국물에 큼직한 유부(아게)를 올려 먹는 게 이 집 방식이에요.','AABkmLdsYRRTCfqaAATkEA9kBIUT9_YvQfgudYZcGi_SsStzh54_HYx63pZ2zMl4vThYGFp7qHL4n5wZpYx_ciIds8xrNSRTf-K6B9ZRJ-SSTjpGSN0DUBTsWoUSHxTp4WHkyHoLyZTqC4buJL1W'],
+ hinode:['가마아게','방금 삶은 면을 그릇째 받아 간장이나 국물에 찍어 먹어요. 면 맛이 그대로 나요.','AABkmLcCo385Ph_VzNT3NDCf3pZ4ySCxeLeg0nz7PTjGvM_ef8YP1xtSFmZJHcXECWEfGkXR9HwCahBDqhKaXPzC5EZVtfzQfcFneMIF_9H0Uhd9GViAv7uqYogfXmDYwXe_PLCFfWoneak1NyQ'],
+ tsuru:['카레 우동','걸쭉한 카레 국물에 굵은 면. 술 마신 뒤에 먹는 사람이 많아요.','AABkmLdQcbK3ZcA_ByJa78hqxUI60qpeZDtriZtpx0RwzjXndMmJW4lSoPvrXrCVC61zOPMeWh7DEOdtBQhHiW_lSASnPVGRPtHgEdMv0zypS5d2umHayPXtDX1MrmmUfW6XfceJmfJi7gkbRNRE'],
+ baka:['가마버터','가마타마에 버터와 후추를 더해 까르보나라처럼 먹어요.','AABkmLd25fab9LaE_oB0m1TwBtJ-2zgxv-rMfYQKrF7U1_8O8m-xvoH4wZQx3Zbz02e4n6irvlh8J5fY-XQkT8gXXq8owisxHw-LrrW08qR2SGSS1avZVrCFmmIIZHnaSdofElvhr4YzfFrgDL8E'],
+ hashimoto:['갓 뽑은 면','제면소라 메뉴가 거의 없어요. 면을 받아 간장이나 국물을 부어 먹어요.','AABkmLfjdTt6_yu9e5QEbloEdu80dhjb8OaUNRRiN9qPfwe-Ug_QoIn9m75iwrz87sXnfnmQLgEDQtl3H8gXMXAJ_suGdLC9qNQowqHmcol6fbATKImZ27BpERTFbOX_ntCGPVqnADnHv_yZ37zP'],
+ sakaeda:['가케 + 튀김','면을 받아 직접 데우고 국물을 붓는 셀프 방식. 튀김을 골라 올려요.','AABkmLf2qwltZStsMA5pJkWuGxrgnONIEi3RVjWz5kuvxdqQeM2L5L2cEO5EJwWq-QZCcurI_-eLVVWYtSvVz1oDNADskdT6-MT1v2xssTpF0r3hdUTBAowcUlZijoRuyJDYedG-JJtC1hsEqZa7']
 };
 var SHOPS=[
  ['yamagoe','야마고에 우동','토 09:00','9:00~13:30, 수·일요일 휴무'],
@@ -502,7 +502,7 @@ function plan(){
   h+='<ol class="rows">';
   D.rows.forEach(function(r){var b='';if(r[3]){n++;b='<span class="bowl">'+n+'그릇째</span>'}
    var dd=r[3]&&DISH[r[4]];
-   h+='<li'+(r[3]?' class="eat"':'')+'><time class="num">'+r[0]+'</time><div>'+(dd?'<img class="thumb" src="'+esc(cimg(dd[2],160))+'" alt="" loading="lazy">':'')+'<strong>'+r[1]+'</strong>'+b+(dd?'<p class="dishname">대표 메뉴 <b>'+dd[0]+'</b></p>':'')+(r[2]?'<p>'+r[2]+'</p>':'')
+   h+='<li'+(r[3]?' class="eat"':'')+'><time class="num">'+r[0]+'</time><div>'+(dd?'<img class="thumb" src="'+esc(gimg(dd[2],160,160))+'" alt="" loading="lazy" referrerpolicy="no-referrer">':'')+'<strong>'+r[1]+'</strong>'+b+(dd?'<p class="dishname">대표 메뉴 <b>'+dd[0]+'</b></p>':'')+(r[2]?'<p>'+r[2]+'</p>':'')
    +(r[4]?'<a class="maplink" href="'+esc(gq(P[r[4]]))+'" target="_blank" rel="noopener">구글 지도</a>':'')+'</div></li>'});
   h+='</ol>';
   if(D.map)h+=courseMap(MAPS[D.map]);
@@ -554,37 +554,37 @@ function carSec(){
 }
 var HOTELS=[
  {n:'도미인 다카마쓰',q:'ドーミーイン高松',area:'가와라마치, 마루가메마치 상점가 2분',rate:'4.1',cnt:'1,465',p:[90297,157167,112871],
-  img:['Dormy Inn Takamatsu.JPG','Abasaa','퍼블릭 도메인'],
+  img:['c','Dormy Inn Takamatsu.JPG'],
   am:['대욕장','노천탕','사우나','밤 라멘 무료','무료 Wi-Fi','유료 주차'],
   pro:['대욕장과 사우나, 목욕 뒤 아이스크림과 요구르트가 무료예요','밤에 간장 라멘을 무료로 줘요','상점가가 바로 옆이라 저녁 먹고 들어오기 편해요'],
   con:['방과 화장실이 작고 객실에 욕조가 없어요','시설이 오래됐다는 후기가 있어요'],
   rv:'직원이 친절하고 대욕장과 야식 라멘이 좋았다는 후기가 가장 많아요.'},
  {n:'도미인 다카마쓰 중앙공원 앞',q:'ドーミーイン高松中央公園前',area:'중앙공원 앞, 가와라마치까지 걸어서 5분쯤',rate:'4.3',cnt:'1,180',p:[118612,224238,159511],
-  img:null,
+  img:['g','AABkmLfNcQinIgww1R__wDjrUHMLUoO8xxXBtipopJZ3sxs3FfJb-NADk9ob7fmQkYsZpEY7aq2q_suXcuwCMn-cjGw8ShKsK23rpvRR8RwijjZfMitDTwHkw17e3O-Yprg8fB1oyg4q'],
   am:['꼭대기층 천연 온천','노천탕','사우나','밤 라멘 무료','무료 Wi-Fi','유료 주차'],
   pro:['꼭대기층 대욕장이 진짜 온천물이에요','조식에 우동이 세 종류 나와요. 조식 평이 가장 좋아요','리무진 버스 정류장이 가깝고 길 건너 편의점이 있어요'],
   con:['방은 작은 편이에요','토요일 밤이 이 목록에서 가장 비싸요'],
   rv:'조식과 온천 칭찬이 압도적이고, 안내문에 한국어가 같이 있어 편했다는 후기가 있어요.'},
  {n:'다이와 로이넷 호텔 다카마쓰',q:'ダイワロイネットホテル高松',area:'마루가메마치 상점가 안, 포켓몬센터 건물 위',rate:'4.2',cnt:'1,367',p:[105313,153187,84796],
-  img:['Daiwa Roynet Hotel Takamatsu.JPG','Abasaa','퍼블릭 도메인'],
+  img:['c','Daiwa Roynet Hotel Takamatsu.JPG'],
   am:['넓은 객실','욕조','건물 안 주차장','레스토랑','무료 Wi-Fi'],
   pro:['일본 비즈니스호텔치고 방과 화장실이 넓어요','욕조가 있고 수압이 세요','건물 4~7층이 주차장이라 차 세우기 편해요'],
   con:['에어컨 냄새가 났다는 후기가 있어요','체크인 뒤 정산을 기계로 해요'],
   rv:'위치와 넓은 방 이야기가 대부분이에요. 1층 빵집도 자주 나와요.'},
  {n:'코코 호텔 다카마쓰',q:'KOKO HOTEL 高松',area:'가와라마치역 걸어서 4~5분',rate:'4.4',cnt:'751',p:[86952,132203,86952],
-  img:null,
+  img:['g','AABkmLdC88A2Gj-5LEi6TSmEkUxg1m_w_5q6krQ9fW423nRr-daL_xVD2F3gY0cChqMUXpQxAihzWUZSh5iEdpsTWP-yCGPr65E37S3zbqekYi_2M5e5BQQnbnPvEP0Ymw5B_9VSV8aGgZs5vDPv'],
   am:['24시간 무료 음료','자전거 무료 대여','우산 무료 대여','욕조','무료 Wi-Fi'],
   pro:['1층에서 커피와 음료를 24시간 무료로 마셔요','자전거와 우산을 무료로 빌려줘요','어메니티를 필요한 만큼 가져다 써요'],
   con:['방이 좁아서 캐리어 두기 빠듯해요','매일 청소는 없고 수건만 바꿔줘요'],
   rv:'가성비와 무료 음료 이야기가 많아요. 한국어를 잘하는 직원이 있다는 후기도 있어요.'},
  {n:'다카마쓰 파크 호텔',q:'高松パークホテル',area:'다카마쓰역과 가와라마치 사이, 상점가 끝에서 10분쯤',rate:'4.2',cnt:'200',p:[75013,84386,60198],
-  img:null,
+  img:['g','AABkmLfvknSqJLnaeJngsoWwknOW0mngzElGI9n1qqLNJmLeyACR-d1sysZBbjcEpz-hRuazVRJuT50ke5YxD95IghiPC-16vCkZKt8M2kCbInHuNiyZGTabY8cSAEJ3sxzmEn0OisgH'],
   am:['무료 커피 라운지','공용 주방','짐 보관','욕조','무료 Wi-Fi','유료 주차'],
   pro:['세 밤 모두 이 목록에서 가장 싸요','방과 욕실이 생각보다 넓고 깨끗해요','로비에 무료 커피와 공용 주방이 있어요'],
   con:['체크인이 무인 키오스크예요','문 방음이 약하고 조식이 없어요'],
   rv:'가격 대비 만족한다는 후기가 대부분이고, 번화가에서 살짝 떨어져 있다는 말이 같이 나와요.'},
  {n:'JR 호텔 클레멘트 다카마쓰',q:'JRホテルクレメント高松',area:'다카마쓰역 바로 앞, 항구 옆',rate:'4.2',cnt:'4,223',p:[91484,114904,114682],
-  img:['JR-Hotel Clement-Takamatsu.jpg','MaedaAkihiko','CC0'],
+  img:['c','JR-Hotel Clement-Takamatsu.jpg'],
   am:['4성급','바다 전망 객실','대욕장','조식 뷔페','바','무료 Wi-Fi','무료 주차'],
   pro:['리무진 버스가 로비 앞에서 서서 공항 오가기 가장 편해요','렌터카 가게가 코앞이에요','방이 넓은 편이고 조식이 좋다는 평이 많아요'],
   con:['번화가 가와라마치까지 걸어서 15분쯤이에요','오래된 건물이에요'],
@@ -597,8 +597,8 @@ function staySec(){
  +'<div class="areas"><div class="card area"><h3>가와라마치</h3><p>상점가, 식당, 술집이 모여 있는 번화가예요. 토요일 밤 츠루마루와 금요일 저녁 잇카쿠까지 걸어가요.</p><span class="for">밤에 놀기 좋아요</span></div>'
  +'<div class="card area"><h3>다카마쓰역 주변</h3><p>렌터카 가게와 리무진 버스 종점이 있어요. 번화가까지는 걸어서 15분쯤 걸려요.</p><span class="for">렌터카 받기 편해요</span></div></div>'
  +HOTELS.map(function(h,i){var sum=sums[i];
-  var photo=h.img?'<figure class="hphoto"><img src="'+esc(cimg(h.img[0],720))+'" alt="'+h.n+' 건물 사진" loading="lazy" width="720" height="480"><figcaption>'+link(cpage(h.img[0]),'사진: '+h.img[1]+', '+h.img[2])+'</figcaption></figure>'
-   :'<div class="hphoto none"><a class="btn ghost" href="'+esc('https://www.google.com/travel/search?q='+encodeURIComponent(h.q)+'&hl=ko')+'" target="_blank" rel="noopener">구글 호텔에서 사진 보기</a><span>공개 라이선스 사진이 없어서 링크로 대신해요</span></div>';
+  var src=h.img[0]==='g'?gimg(h.img[1],720,480):cimg(h.img[1],720);
+  var photo='<figure class="hphoto"><img src="'+esc(src)+'" alt="'+h.n+'" loading="lazy" referrerpolicy="no-referrer" width="720" height="480"></figure>';
   return '<article class="card hotel">'+photo+'<div class="hbody">'
   +'<div class="htop"><h3>'+h.n+'</h3><span class="score num">★ '+h.rate+'<small>구글 리뷰 '+h.cnt+'개</small></span></div>'
   +'<p class="where">'+h.area+'</p>'
@@ -607,7 +607,7 @@ function staySec(){
   +'<p class="rv"><b>후기 요약</b>'+h.rv+'</p>'
   +'<div class="nights num">'+h.p.map(function(p,j){return '<div><span>'+NIGHTS[j]+'</span><b>'+won(p)+'</b></div>'}).join('')
   +'<div class="sum'+(sum===min?' low':'')+'"><span>3박</span><b>'+won(sum)+'</b></div></div>'
-  +'<p class="hlinks">'+link(gq(h.q),'지도')+link('https://www.google.com/travel/search?q='+encodeURIComponent(h.q)+'&hl=ko','가격·예약')+'</p>'
+  +'<p class="hlinks">'+link(gq(h.q),'지도')+'</p>'
   +'</div></article>'}).join('')
  +'<p class="small">가격은 11월 18일 밤 구글 호텔에서 1월 15일부터 하루씩, 성인 2명 1객실로 조회한 1박 최저가예요(원). 예약 사이트와 객실 종류에 따라 달라지고 날짜가 다가오면 바뀌어요. 평점, 편의시설, 후기는 같은 날 구글 호텔 페이지에서 확인해 요약했어요.</p></section>';
 }
@@ -660,8 +660,7 @@ function tipSec(){
 
 function shops(){
  return '<div class="card"><ol class="udons">'+SHOPS.map(function(s,i){var d=DISH[s[0]];
-  return '<li><figure class="dish"><img src="'+esc(cimg(d[2]))+'" alt="'+d[0]+' 예시 사진" loading="lazy" width="480" height="360"><span class="seal mini" style="--r:'+TILT[i]+'deg"><b class="num">'+(i+1)+'</b></span>'
-  +'<figcaption>메뉴 예시 사진, 이 가게 사진 아님 · '+link(cpage(d[2]),d[3]+', '+d[4])+'</figcaption></figure>'
+  return '<li><figure class="dish"><img src="'+esc(gimg(d[2],400,320))+'" alt="'+s[1]+' '+d[0]+'" loading="lazy" referrerpolicy="no-referrer" width="400" height="320"><span class="seal mini" style="--r:'+TILT[i]+'deg"><b class="num">'+(i+1)+'</b></span></figure>'
   +'<div class="ud"><p class="when num">'+s[2]+'</p><h3>'+link(gq(P[s[0]]),s[1])+'</h3><p class="menu"><b>'+d[0]+'</b>'+d[1]+'</p><small>'+s[3]+'</small></div></li>'}).join('')+'</ol></div>';
 }
 var PACK=[['여권과 비짓 재팬 웹 QR','입국 정보를 미리 넣어 두면 공항에서 QR만 보여줘요.'],['엔화 현금','우동집은 대부분 현금만 받아요.'],['그릇과 젓가락','하시모토 제면소에서 면을 받을 때 써요. 일회용도 괜찮아요.'],['국제운전면허증, 한국 면허증, 여권','운전할 사람은 셋 다 있어야 차를 받아요.'],['면세 환급 받을 카드','면세로 살 때 등록한 카드를 그대로 써요.'],['렌터카 ETC 카드 신청','스마트IC는 ETC 차만 지나가요. 렌터카 예약할 때 같이 신청해요.'],['따뜻한 겉옷과 젖어도 되는 신발','1월 바닷가 노을은 추워요. 지치부가하마 모래사장엔 물이 고여 있어요.']];
